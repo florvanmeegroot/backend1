@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Gatito marron",
+    "description": "mascota felina color marron",
+    "code": "gato-1",
+    "price": 5000,
+    "status": true,
+    "stock": 20,
+    "category": "mascotas",
+    "thumbnails": []
+  },
+  {
+    "id": 2,
+    "title": "Perrito blanco",
+    "description": "mascota perruna color blanco tipo Snoopy",
+    "code": "perro-1",
+    "price": 3000,
+    "status": true,
+    "stock": 1,
+    "category": "mascotas",
+    "thumbnails": []
+  }
+]
