@@ -1,0 +1,55 @@
+<h1>Productos en Tiempo Real</h1>
+
+<form id="productForm">
+  <input type="text" name="title" placeholder="Título" required />
+  <input type="number" name="price" placeholder="Precio" required />
+  <button type="submit">Agregar</button>
+</form>
+
+<ul id="productList">
+  {{#each products}}
+    <li>
+      {{this.title}} - ${{this.price}}
+      <button onclick="deleteProduct('{{this.id}}')">Eliminar</button>
+    </li>
+  {{/each}}
+</ul>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  const form = document.getElementById("productForm");
+  const productList = document.getElementById("productList");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const product = {
+      title: formData.get("title"),
+      price: formData.get("price")
+    };
+
+    socket.emit("newProduct", product);
+    form.reset();
+  });
+
+  function deleteProduct(id) {
+    socket.emit("deleteProduct", id);
+  }
+
+  socket.on("updateProducts", (products) => {
+    productList.innerHTML = "";
+
+    products.forEach(prod => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${prod.title} - $${prod.price}
+        <button onclick="deleteProduct('${prod.id}')">Eliminar</button>
+      `;
+      productList.appendChild(li);
+    });
+  });
+</script>

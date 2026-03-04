@@ -25,17 +25,25 @@ export default class ProductManager {
     const products = this.getProducts();
 
     const newId =
-      products.length > 0
-        ? products[products.length - 1].id + 1
-        : 1;
+      products.length > 0 ? products[products.length - 1].id + 1 : 1;
 
     const newProduct = {
       id: newId,
-      ...product
+      ...product,
     };
 
     products.push(newProduct);
     this.saveProducts(products);
   }
-}
 
+  // Eliminar producto
+  deleteProduct(id) {
+    const products = this.getProducts();
+
+    const filteredProducts = products.filter(
+      (product) => product.id !== Number(id),
+    );
+
+    this.saveProducts(filteredProducts);
+  }
+}

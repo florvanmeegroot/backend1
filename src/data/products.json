@@ -20,5 +20,49 @@
     "stock": 1,
     "category": "mascotas",
     "thumbnails": []
+  },
+  {
+    "id": 4,
+    "title": "Hello Kitty",
+    "description": "Producto agregado desde realtime",
+    "code": "code-1772656928222",
+    "price": 180000,
+    "status": true,
+    "stock": 10,
+    "category": "general",
+    "thumbnails": []
+  },
+  {
+    "id": 5,
+    "title": "Snoopy blanco",
+    "description": "Producto agregado desde realtime",
+    "code": "code-1772657110192",
+    "price": 25000,
+    "status": true,
+    "stock": 10,
+    "category": "general",
+    "thumbnails": []
+  },
+  {
+    "id": 6,
+    "title": "Coraje el perro cobarde",
+    "description": "Producto agregado desde realtime",
+    "code": "code-1772657137017",
+    "price": 5000,
+    "status": true,
+    "stock": 10,
+    "category": "general",
+    "thumbnails": []
+  },
+  {
+    "id": 7,
+    "title": "Peppa Pig Rosa",
+    "description": "Producto agregado desde realtime",
+    "code": "code-1772657452914",
+    "price": 8000,
+    "status": true,
+    "stock": 10,
+    "category": "general",
+    "thumbnails": []
   }
 ]
